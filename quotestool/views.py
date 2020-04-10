@@ -1,5 +1,8 @@
 from django.http import HttpResponse
 
 
-def index(request):
-    return HttpResponse("If you see this, the site works")
+def input(request):
+    return HttpResponse("This is the input page")
+
+def results(request):
+    return HttpResponse("This is the results page")
