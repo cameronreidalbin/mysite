@@ -3,14 +3,14 @@
 </p>
 Computer Predicted Successful Margins Are:
 </p>
-#{% for each in prediction %}
-#    Margin = {{ each.0 }}%,  Price = ${{ each.1|floatformat:2 }}
-#    </br>
-#{% endfor %}
+{% for each in prediction %}
+    Margin = {{ each.0 }}%,  Price = ${{ each.1|floatformat:2 }}
+    </br>
+{% endfor %}
 If you see nothing above, the model thinks no margin will be successful...
 </p>
-#{% load static %}
-#<img src="{% static "quotestool/quotesGraph.png" %}" alt="My image">
+{% load static %}
+<img src="{% static "quotestool/quotesGraph.png" %}" alt="My image">
 </p>
 <a href="/quotestool/">Go Back?</a>
 </ul>
