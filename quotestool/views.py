@@ -14,7 +14,7 @@ def input(request):
 
 def results(request):
     parameterList = Parameter.objects.all()
-#    smc = Parameter.objects.get(name="SMC")
+    smc = Parameter.objects.get(name="SMC")
 #    eau = Parameter.objects.get(name="EAU")
 #    smc.quantity = int(request.GET['SMC'])
 #    eau.quantity = int(request.GET['EAU'])
