@@ -10,7 +10,7 @@ def input(request):
     parameterList = Parameter.objects.all()
     context = {'parameterList': parameterList}
 #    return HttpResponse('input page')
-    return render(request, 'quotesTool/input.html', context)
+    return render(request, 'quotestool/input.html', context)
 
 def results(request):
     parameterList = Parameter.objects.all()
