@@ -9,8 +9,8 @@ from .models import Parameter
 def input(request):
     parameterList = Parameter.objects.all()
     context = {'parameterList': parameterList}
-    return HttpResponse('input page')
-#    return render(request, 'quotesTool/input.html', context)
+#    return HttpResponse('input page')
+    return render(request, 'quotesTool/input.html', context)
 
 def results(request):
     parameterList = Parameter.objects.all()

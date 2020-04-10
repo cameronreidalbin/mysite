@@ -1,0 +1,17 @@
+<ul>
+<h1>Transformer Quotes Tool</h1>
+
+<p>Input SMC in Cents (135 = $1.35)</p>
+<p>Input EAU without commas (10000 not 10,000)</p>
+
+<form action="/quotesTool/results/" method="get">
+{% for parameter in parameterList %}
+    <label for="{{ parameter.name }}">{{ parameter.name }}</label>
+    <input type="number" name="{{ parameter.name }}">
+    </p>
+{% endfor %}
+<label for="pwd">Password:</label>
+<input type="password" id="pwd" name="pwd" minlength="8"></p>
+<input type="submit" value="Submit">
+</form>
+</ul>
