@@ -4,7 +4,7 @@ from django.template import loader
 from django.shortcuts import render
 
 from .models import Parameter
-#from .prediction import predict
+from .prediction import predict
 
 Parameter.objects.all().delete()
 smc = Parameter(name="SMC")
@@ -27,8 +27,7 @@ def results(request):
     smc.save()
     eau.save()
     if password == 'alphaplan':
-#        prediction = predict(smc.quantity,eau.quantity)
-        prediction = [100]
+        prediction = predict(smc.quantity,eau.quantity)
         context = {'parameterList': parameterList, 'prediction':prediction}
         return render(request, 'quotestool/results.html', context)
     return HttpResponse('wrong password')
