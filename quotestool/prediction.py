@@ -3,7 +3,7 @@ def predict(smc,eau):
     import matplotlib
     matplotlib.use('Agg')
     from sklearn.ensemble import RandomForestClassifier
-    dataset = pandas.read_csv('quotesTool/750 Won Or Not.csv')
+    dataset = pandas.read_csv('quotestool/750 Won Or Not.csv')
     array = dataset.values
     X = array[:,0:3]
     Y = array[:,3]
