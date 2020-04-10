@@ -19,16 +19,16 @@ def input(request):
 
 def results(request):
     parameterList = Parameter.objects.all()
-#    smc = Parameter.objects.get(name="SMC")
-#    eau = Parameter.objects.get(name="EAU")
-#    smc.quantity = int(request.GET['SMC'])
-#    eau.quantity = int(request.GET['EAU'])
-#    password = request.GET['pwd']
-#    smc.save()
-#    eau.save()
-#    if password == 'alphaplan':
+    smc = Parameter.objects.get(name="SMC")
+    eau = Parameter.objects.get(name="EAU")
+    smc.quantity = int(request.GET['SMC'])
+    eau.quantity = int(request.GET['EAU'])
+    password = request.GET['pwd']
+    smc.save()
+    eau.save()
+    if password == 'alphaplan':
 #        prediction = predict(smc.quantity,eau.quantity)
-#        context = {'parameterList': parameterList, 'prediction':prediction}
-#        return render(request, 'quotesTool/results.html', context)
-#    return HttpResponse('wrong password')
-    return HttpResponse('results page')
+        prediction = [100]
+        context = {'parameterList': parameterList, 'prediction':prediction}
+        return render(request, 'quotestool/results.html', context)
+    return HttpResponse('wrong password')

@@ -4,7 +4,7 @@
 <p>Input SMC in Cents (135 = $1.35)</p>
 <p>Input EAU without commas (10000 not 10,000)</p>
 
-<form action="/quotesTool/results/" method="get">
+<form action="/quotestool/results/" method="get">
 {% for parameter in parameterList %}
     <label for="{{ parameter.name }}">{{ parameter.name }}</label>
     <input type="number" name="{{ parameter.name }}">
