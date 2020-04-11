@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'alphaplan')
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['hidden-plateau-55660.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['transformerquotes.herokuapp.com','127.0.0.1']
 
 
 # Application definition
