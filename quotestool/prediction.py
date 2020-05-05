@@ -44,8 +44,8 @@ def predict(smc,eau):
                 sdpM += [dpMargin]
     plt.clf()
     plt.plot(udpQ,udpM,'ro',sdpQ,sdpM,'go')
-    plt.title('Quotes at Similar SMC')
+    plt.title('Past quotes at Similar SMC & Quantity')
     plt.xlabel('Quantity')
-    plt.ylabel('Margin')
+    plt.ylabel('% Margin')
     plt.savefig('quotestool/static/quotestool/otherstuff.png')
     return salesPredictions

@@ -1,16 +1,16 @@
 <ul>
 <h1>Results</h1>
 </p>
-Computer Predicted Successful Margins Are:
+Computer thinks THESE prices will win:
 </p>
 {% for each in prediction %}
     Margin = {{ each.0 }}%,  Price = ${{ each.1|floatformat:2 }}
     </br>
 {% endfor %}
-If you see nothing above, the model thinks no margin will be successful...
+If you see nothing above, the computer thinks you're screwed...
 </p>
 {% load static %}
 <img src="{% static "quotestool/otherstuff.png" %}" alt="My image">
 </p>
-<a href="/quotestool/">Go Back?</a>
+<a href="/quotestool/">Try another SMC & EAU</a>
 </ul>

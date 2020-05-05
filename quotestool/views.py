@@ -6,22 +6,26 @@ from django.shortcuts import render
 from .models import Parameter
 from .prediction import predict
 
-Parameter.objects.all().delete()
-smc = Parameter(name="SMC")
-eau = Parameter(name="EAU")
-smc.save()
-eau.save()
-
 def input(request):
+    Parameter.objects.all().delete()
+    smc = Parameter(name="SMC")
+    eau = Parameter(name="EAU")
+    smc.save()
+    eau.save()
     parameterList = Parameter.objects.all()
     context = {'parameterList': parameterList}
     return render(request, 'quotestool/input.html', context)
 
 def results(request):
+    Parameter.objects.all().delete()
+    smc = Parameter(name="SMC")
+    eau = Parameter(name="EAU")
+    smc.save()
+    eau.save()
     parameterList = Parameter.objects.all()
     smc = Parameter.objects.get(name="SMC")
     eau = Parameter.objects.get(name="EAU")
-    smc.quantity = int(request.GET['SMC'])
+    smc.quantity = 100*float(request.GET['SMC'])
     eau.quantity = int(request.GET['EAU'])
     password = request.GET['pwd']
     smc.save()
