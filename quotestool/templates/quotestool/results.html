@@ -1,7 +1,7 @@
 <ul>
 <h1>Results</h1>
 </p>
-Computer thinks THESE prices will win:
+Margins with best chance of winning:
 </p>
 {% for each in prediction %}
     Margin = {{ each.0 }}%,  Price = ${{ each.1|floatformat:2 }}
@@ -11,6 +11,11 @@ If you see nothing above, the computer thinks you're screwed...
 </p>
 {% load static %}
 <img src="{% static "quotestool/otherstuff.png" %}" alt="My image">
+</p>
+{% for each in priceMarginList %}
+    {{each.0}}% margin = ${{each.1}}
+    </br>
+{% endfor %}
 </p>
 <a href="/quotestool/">Try another SMC & EAU</a>
 </ul>

@@ -3,15 +3,19 @@ def predict(smc,eau):
     import matplotlib
     matplotlib.use('Agg')
     from sklearn.ensemble import RandomForestClassifier
+    from sklearn.linear_model import LogisticRegression
     dataset = pandas.read_csv('quotestool/750 Won Or Not.csv')
     array = dataset.values
     X = array[:,0:3]
     Y = array[:,3]
     rfc = RandomForestClassifier()
     rfc.fit(X,Y)
+    lor = LogisticRegression()
+    lor.fit(X,Y)
 
     salesPredictions = []    
-    for margin in range(1,90):
+    for margin in range(50,710,25):
+        margin = margin/10
         price = 100*smc/(100 - margin)
         salesPrediction = rfc.predict([[eau, price, smc]])
         if salesPrediction > 0:
@@ -49,3 +53,10 @@ def predict(smc,eau):
     plt.ylabel('% Margin')
     plt.savefig('quotestool/static/quotestool/otherstuff.png')
     return salesPredictions
+
+def makePriceMarginList(smc):
+    priceMarginList = []
+    for margin in range(5,71,5):
+        priceMarginList += [[margin, round(smc/(100-margin),2)]]
+    return priceMarginList
+        

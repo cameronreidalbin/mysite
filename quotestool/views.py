@@ -5,6 +5,7 @@ from django.shortcuts import render
 
 from .models import Parameter
 from .prediction import predict
+from .prediction import makePriceMarginList
 
 def input(request):
     Parameter.objects.all().delete()
@@ -32,6 +33,7 @@ def results(request):
     eau.save()
     if password == 'alphaplan':
         prediction = predict(smc.quantity,eau.quantity)
-        context = {'parameterList': parameterList, 'prediction':prediction}
+        priceMarginList = makePriceMarginList(smc.quantity)
+        context = {'parameterList': parameterList, 'prediction':prediction, 'priceMarginList':priceMarginList}
         return render(request, 'quotestool/results.html', context)
     return HttpResponse('wrong password')
